@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main" class="page ">
+    <header class="page-header">
+        <div class="container">
+            <h1 class="title">Edit Account Information</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <article class="col-sm-12 col-md-12 content">
+                <div class="my-account margin-top">
+
+@using (@Html.BeginForm("Register", "Login", FormMethod.Post, new { @class = "form-validator", enctype = "multipart/form-data" }))
+{
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="title-box">
+                                    <h2 class="title">Kullanıcı Bilgi Girişi</h2>
+                                </div>
+
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div class="form-group">
+                                            <label> Adı Soyadı <span class="required">*</span></label>
+                                            <input class="form-control" type="text" name="UserName" placeholder="Name" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Adres <span class="required">*</span></label>
+                                            <input class="form-control" type="text" name="UserAdress" placeholder="Adres" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tel <span class="required">*</span></label>
+                                            <input class="form-control" type="text" name="Phone" placeholder="Telefon No" required>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <label>Email Address <span class="required">*</span></label>
+                                            <input class="form-control" type="email" name="UserEmail" placeholder="mr-alen@example.com" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password <span class="required">*</span></label>
+                                            <input class="form-control" type="password" name="UserPassword" placeholder="mr-alen@example.com" required>
+                                        </div>
+                          
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="buttons-box clearfix">
+                            <button type="submit" class="btn btn-default">Save</button>
+                            <span class="required"><b>*</b> Required Field</span>
+                        </div>
+}
+                   
+                </div>
+            </article><!-- .content -->
+
+            
+        </div>
+    </div>
+</section>
+
+

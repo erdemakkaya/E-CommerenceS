@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "OrderInfo";
+}
+@using Entities
+@model  Orders
+<section id="main" class="page ">
+    <header class="page-header">
+        <div class="container">
+            <h1 class="title">Sipariş Özeti</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <article class="col-sm-12 col-md-12 content">
+                <div class="my-account">
+                    <div class="bottom-padding">
+                        <p>Teşşekkürler . Siparişiniz alını. En kısa sürede ürününüz size ulaşacaktır</p>
+                        <div class="alert alert-info">
+                            <ul class="list-unstyled">
+                                <li>Sipariş: <strong>#@Model.OrdderId</strong></li>
+                                <li>Tarih: <strong>@Model.CreationDate</strong></li>
+                                <li>Fiyat: <strong><span class="amount">@Model.OrdderAmount ₺</span></strong></li>
+                                <li>Ödeme Tipi: <strong>Direk Ödeme</strong></li>
+                            </ul>
+                        </div>
+                        <p>Ödeme işlemini Direk yapınız Herhangi bir kredi kartı veya  işlem kullanmayınız.</p>
+                    </div>
+
+                    <div class="bottom-padding">
+                        <div class="title-box">
+                            <h2 class="title">Sipariş Detayı</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped text-left order-details">
+                                <thead>
+                                    <tr>
+                                        <th class="product-name">Ürün</th>
+                                        <th class="product-total">Fiyat</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Sepet Toplamı:</th>
+                                        <td>@Model.OrdderAmount ₺</td>
+                                    </tr> 
+                                    <tr>
+                                        <th>Kargo:</th>
+                                        <td>Ücretsiz Kargo</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sipariş Toplam:</th>
+                                        <td>@Model.OrdderAmount  ₺</td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (var item in ViewBag.DetailItems)
+                                    {
+                                        <tr>
+
+                                            <td class="product-name">
+                                                <a href="#">@item.Product.ProductName</a> <strong class="product-quantity">@item.Quantity</strong>
+                                            </td>
+                                            <td class="product-total"><span class="amount">@(item.Product.ProductPrice*item.Quantity) ₺</span></td>
+                                        </tr>
+                                    }
+                                  
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="title-box">
+                        <h2 class="title">Customer Details</h2>
+                    </div>
+                    <p><strong>Email:</strong> rrrr@fff.bb</p>
+                    <p><strong>Telephone:</strong> 4757887</p>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <h3 class="subtitle">Billing Address</h3>
+                            <address>
+                              @Model.OrderAdress
+                            </address>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6">
+                            <h3 class="subtitle">Shipping Address</h3>
+                            <address>
+                           @Model.OrderAdress
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </article><!-- .content -->
+        </div>
+    </div>
+</section>

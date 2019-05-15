@@ -1,0 +1,159 @@
+﻿@using Entities;
+@model List<CartsProducts>
+@{
+    ViewBag.Title = "CartDetail";
+}
+
+<div id="main" class="page">
+    <header class="page-header">
+        <div class="container">
+            <h1 class="title">Alışveriş Sepeti</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <article class="content col-sm-12 col-md-12">
+                <div class="table-box">
+                    <table id="shopping-cart-table" class="shopping-cart-table table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="td-name">Ürün Adı </th>
+                              
+                                <th class="td-price">Birim Fiyatı</th>
+                                <th class="td-qty">Adet</th>
+                                <th class="td-total">Alt Toplam</th>
+                                <th class="td-remove">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                
+                                @foreach (var item in Model)
+                                {
+                                        
+                                    <tr>
+
+                                        <td class="td-images">
+                                            <a href="/ProductDetail/Product?id=+@item.Product.ProductId+" class="product-image">
+                                                <img class="replace-2x" src="@item.Product.ProductImage" alt="" title="" width="70" height="70">
+                                            </a>
+                                        </td>
+                                        <td class="td-name">
+                                            <h2 class="product-name">
+                                                <a href="/ProductDetail/Product?id=+@item.Product.ProductId+" >@item.Product.ProductName</a>
+                                            </h2>
+                                        </td>
+                                      
+                                        <td class="td-price">
+                                            <div class="price">@item.Product.ProductPrice ₺</div>
+                                        </td>
+                                        <td class="td-qty">
+                                            <input  class="form-control" onchange="jsUpdateCart(@item.CartProductsId,this.value)" type="text"  value="@item.Quantity">
+                                        </td>
+                                        <td class="td-total">
+                                            
+                                            <div class="price">@(item.Product.ProductPrice * item.Quantity) ₺</div>
+                                        </td>
+                                        <td class="td-remove">
+                                            <a href="javascript:DeleteFromCartDetail(@item.CartProductsId)" class="product-remove">
+                                             <i class="fa fa-remove"></i>   
+                   
+			
+                                            </a><!-- .product-remove -->
+                                        </td>
+                                    </tr>
+                                }
+                            
+                        </tbody>
+                    </table><!-- .shopping-cart-table -->
+                </div>
+                <table class="shopping-cart-table shopping-cart-table-button table">
+                    <tbody>
+                        <tr>
+                            <td class="action no-border">
+                                <a href="#"><i class="fa fa-angle-left"></i> Alışverişe Devam et</a>
+                                <a href="/ProductDetail/CartDetail" class="update"><i class="fa fa-rotate-right"></i> Alışveriş sepetini Yenile</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="car-bottom" class="row">
+                    <div class="col-sm-12 col-md-4">
+                        
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                       
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <div class="car-bottom-box bg total">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <td><span id="subTotal" class="price">@ViewBag.CartTotal ₺</span></td>
+                                    </tr>
+                                    <tr class="tr-total">
+                                        <td>Grand Total</td>
+                                        <td><span id="grandTotal" class="price">@ViewBag.CartTotal ₺</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div>
+                                <a href="/Order/Pay" class="btn checkout btn-default btn-lg">Sipariş Ver</a>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clesrfix"></div>
+
+              
+                    <div class="title-box no-margin">
+                        <a class="next" href="#">
+                            <svg x="0" y="0" width="9px" height="16px" viewBox="0 0 9 16" enable-background="new 0 0 9 16" xml:space="preserve">
+                            <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#fcfcfc" points="1,0.001 0,1.001 7,8 0,14.999 1,15.999 9,8 "></polygon>
+			  </svg>
+                        </a>
+                        <a class="prev" href="#">
+                            <svg x="0" y="0" width="9px" height="16px" viewBox="0 0 9 16" enable-background="new 0 0 9 16" xml:space="preserve">
+                            <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#fcfcfc" points="8,15.999 9,14.999 2,8 9,1.001 8,0.001 0,8 "></polygon>
+			  </svg>
+                        </a>
+                   
+                </div><!-- .recommended-product -->
+            </article><!-- .content -->
+        </div>
+    </div>
+</div>
+<script>
+function jsUpdateCart(cartproductid,quantity) {
+
+ 
+    alert(quantity);
+    $.ajax({
+  
+        url: '/ProductDetail/UpdateCart',
+        type: "POST",
+        data: { cartproductid:cartproductid, quantity:quantity },
+        dataType: 'json',
+        success: function (response) {
+            alert(response);
+            if (response.status == 1) {
+                alert(13);
+         
+
+
+            }
+
+
+        }
+
+    })
+}
+
+</script>

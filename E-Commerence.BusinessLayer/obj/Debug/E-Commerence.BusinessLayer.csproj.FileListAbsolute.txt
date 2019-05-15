@@ -1,0 +1,16 @@
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\E-Commerence.BusinessLayer.dll.config
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\E-Commerence.BusinessLayer.dll
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\E-Commerence.BusinessLayer.pdb
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\E-Commerence.DataAccessLayer.dll
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\Entities.dll
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\E-Commerence.DataAccessLayer.pdb
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\Entities.pdb
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\obj\Debug\E-Commerence.BusinessLayer.csprojResolveAssemblyReference.cache
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\obj\Debug\E-Commerence.BusinessLayer.dll
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\obj\Debug\E-Commerence.BusinessLayer.pdb
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\FakeData.dll
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\E-Commerence.BusinessLayer\bin\Debug\FakeData.pdb

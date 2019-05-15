@@ -1,0 +1,5 @@
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\Entities\obj\Debug\E-Commerence.Entities.csprojResolveAssemblyReference.cache
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\Entities\bin\Debug\Entities.dll
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\Entities\bin\Debug\Entities.pdb
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\Entities\obj\Debug\Entities.dll
+C:\SpeedBoosterProjects\MVC\E-CommerenceS\Entities\obj\Debug\Entities.pdb
